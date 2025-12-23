@@ -866,6 +866,7 @@ body{
   width: 42px;
   height: 42px;
   border: 1px solid #ff7a00;
+  text-decoration: none;
   border-radius: 50%;
   display: grid;
   place-items: center;
