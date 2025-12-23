@@ -1,12 +1,22 @@
-const joinBtn = document.getElementById("joinBtn");
+// const joinBtn = document.getElementById("joinBtn");
+
 const modal = document.getElementById("joinModal");
 const closeBtn = modal.querySelector(".close");
 
+
+const joinBtns = document.getElementsByClassName('joinBtn');
+for (let btn of joinBtns) {
+  btn.onclick = () => {
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  };
+}
+
 // Open modal
-joinBtn.onclick = () => {
-  modal.style.display = "block";
-  document.body.style.overflow = "hidden"; // Prevent scrolling
-};
+// joinBtn.onclick = () => {
+//   modal.style.display = "block";
+//   document.body.style.overflow = "hidden"; // Prevent scrolling
+// };
 
 // Close modal
 closeBtn.onclick = () => {
@@ -21,3 +31,59 @@ window.onclick = (e) => {
     document.body.style.overflow = "auto";
   }
 };
+
+
+
+const cards = document.querySelectorAll('.impact-card');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // Mouse X relative to card
+    const y = e.clientY - rect.top;  // Mouse Y relative to card
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 15; // Max 10deg
+    const rotateY = ((x - centerX) / centerX) * 15;
+
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
+});
+
+
+
+const profileCards = document.querySelectorAll('.profile-card');
+
+profileCards.forEach(card => {
+  const photoLayer = card.querySelector('.card-layer.photo');
+  const contentLayer = card.querySelector('.card-layer.content');
+
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 8; // smaller tilt
+    const rotateY = ((x - centerX) / centerX) * 8;
+
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+
+    // Parallax layers
+    photoLayer.style.transform = `translateZ(30px)`; // photo moves forward
+    contentLayer.style.transform = `translateZ(60px)`; // text moves slightly more
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+    photoLayer.style.transform = `translateZ(0px)`;
+    contentLayer.style.transform = `translateZ(0px)`;
+  });
+});
+

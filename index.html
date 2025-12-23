@@ -22,7 +22,7 @@
 
         <!-- Navigation Links -->
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
+          <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#events">Technical Events</a></li>
           <li><a href="#people">People</a></li>
@@ -32,7 +32,7 @@
 
         <!-- CTA -->
         <div class="nav-cta">
-          <a id="joinBtn" class="btn primary join-btn">Join NEXAA</a>
+          <a id="joinBtn" class="btn primary join-btn joinBtn">Join NEXAA</a>
         </div>
       </nav>
     </header>
@@ -59,12 +59,12 @@
         <div class="hero-actions">
           <a href="#events" class="btn primary">Explore Events</a>
           <a href="#team" class="btn outline">Meet the Team</a>
-          <a id="joinBtn" class="btn primary">Join NEXAA</a>
+          <a id="joinBtn2" class="btn primary joinBtn">Join NEXAA</a>
         </div>
       </div>
     </section>
 
-    <section class="about-nexaa">
+    <section class="about-nexaa" id="about">
       <div class="about-container">
         <div class="about-header">
           <h2>About NEXAA</h2>
@@ -228,7 +228,7 @@
       </div>
     </section>
 
-    <section class="people-nexaa">
+    <section class="people-nexaa" id="people">
       <div class="people-container">
         <!-- Section Header -->
         <div class="people-header">
@@ -247,17 +247,25 @@
 
           <div class="people-grid" id="team">
             <div class="profile-card">
-              <img src="faculty1.jpg" alt="Faculty Advisor" />
-              <h4>Dr. A. Srinivas</h4>
-              <span class="designation">Professor, CSE (AI & ML)</span>
-              <span class="role">Faculty Advisor – NEXAA</span>
+              <div class="card-layer photo">
+                <img src="faculty1.jpg" alt="Faculty Advisor" />
+              </div>
+              <div class="card-layer content">
+                <h4>Dr. A. Srinivas</h4>
+                <span class="designation">Professor, CSE (AI & ML)</span>
+                <span class="role">Faculty Advisor – NEXAA</span>
+              </div>
             </div>
 
             <div class="profile-card">
-              <img src="faculty2.jpg" alt="Faculty Advisor" />
-              <h4>Dr. B. Lakshmi</h4>
-              <span class="designation">Associate Professor</span>
-              <span class="role">Co-Advisor – NEXAA</span>
+              <div class="card-layer photo">
+                <img src="faculty2.jpg" alt="Faculty Advisor" />
+              </div>
+              <div class="card-layer content">
+                <h4>Dr. B. Lakshmi</h4>
+                <span class="designation">Associate Professor</span>
+                <span class="role">Co-Advisor – NEXAA</span>
+              </div>
             </div>
           </div>
         </div>
@@ -398,7 +406,7 @@
       </div>
     </section>
 
-    <section class="gallery-nexaa">
+    <section class="gallery-nexaa" id="gallery">
       <div class="gallery-container">
         <!-- Header -->
         <div class="gallery-header">
@@ -474,41 +482,42 @@
         <form class="join-form" id="joinFormModal" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <input type="text" id="fullname" required />
               <label>Full Name</label>
+              <input type="text" id="fullname" required />
               <span class="error">Required</span>
             </div>
             <div class="form-group">
-              <input type="email" id="email" required />
               <label>College Email</label>
+              <input type="email" id="email" required />
               <span class="error">Valid email required</span>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <input type="text" id="roll" required />
               <label>Roll Number</label>
+              <input type="text" id="roll" required />
               <span class="error">Required</span>
             </div>
 
             <div class="form-group">
+              <label>Academic Year</label>
               <select id="year" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>Select Year</option>
                 <option>1st Year</option>
                 <option>2nd Year</option>
                 <option>3rd Year</option>
                 <option>4th Year</option>
               </select>
-              <label>Academic Year</label>
               <span class="error">Select year</span>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
+              <label>Primary Interest</label>
               <select id="interest" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>Select Interest</option>
                 <option>AI / ML</option>
                 <option>Web Development</option>
                 <option>Data Science</option>
@@ -516,27 +525,26 @@
                 <option>Design / Media</option>
                 <option>Event Management</option>
               </select>
-              <label>Primary Interest</label>
               <span class="error">Select one</span>
             </div>
 
             <div class="form-group">
+              <label>Preferred Role</label>
               <select id="role" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>Select Role</option>
                 <option>Technical Team</option>
                 <option>Design / Media Team</option>
                 <option>Event Management Team</option>
                 <option>Core Leadership (Future)</option>
               </select>
-              <label>Preferred Role</label>
               <span class="error">Select role</span>
             </div>
           </div>
 
           <div class="form-group full">
-            <textarea id="why" rows="4" required></textarea>
             <label>Why do you want to join NEXAA?</label>
             <span class="error">This matters. Write something.</span>
+            <textarea id="why" rows="4" required></textarea>
           </div>
 
           <button type="submit" class="submit-btn">Apply to Join NEXAA</button>
@@ -597,7 +605,7 @@
       </div>
     </section>
 
-    <section class="nexaa-contact">
+    <section class="nexaa-contact" id="contact">
       <div class="container">
         <h2 class="section-title">
           Contact NEXAA
@@ -610,12 +618,14 @@
             <h3>Official Contact</h3>
 
             <p><strong>Email:</strong><br />nexaa@yourcollege.edu</p>
-            <p><strong>College:</strong><br />Your College Name</p>
+            <p>
+              <strong>College:</strong><br />R.V.R & J.C College Of Engineering
+            </p>
             <p>
               <strong>Address:</strong><br />
-              Department of AI & Emerging Technologies,<br />
-              Your College Name,<br />
-              City, State
+              Department of CSE-AIML,<br />
+              R.V.R & J.C College Of Engineering,<br />
+              Guntur, Andhra Pradesh
             </p>
 
             <div class="social-links">
@@ -633,21 +643,21 @@
             <h3>Send a Message</h3>
 
             <div class="form-group">
-              <input type="text" id="name" required />
               <label for="name">Full Name</label>
               <span class="error">Name is required</span>
+              <input type="text" id="name" required />
             </div>
 
             <div class="form-group">
-              <input type="email" id="email" required />
               <label for="email">Email Address</label>
               <span class="error">Valid email required</span>
+              <input type="email" id="email" required />
             </div>
 
             <div class="form-group">
-              <textarea id="message" rows="4" required></textarea>
               <label for="message">Message</label>
               <span class="error">Message cannot be empty</span>
+              <textarea id="message" rows="4" required></textarea>
             </div>
 
             <button type="submit">Submit</button>
