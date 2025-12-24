@@ -14,52 +14,88 @@
   <body>
     <header class="nexaa-header">
       <nav class="nav-container">
-        <!-- Logo / Brand -->
+        <!-- Brand -->
         <div class="nav-brand">
           <span class="brand-logo">NEXAA</span>
           <span class="brand-sub">Next Gen Engineers & AI Association</span>
         </div>
 
-        <!-- Navigation Links -->
-        <ul class="nav-links">
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" id="navLinks">
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#events">Technical Events</a></li>
           <li><a href="#people">People</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!-- <li class="mobile-cta ">
+            <a class="btn primary joinBtn">Join NEXAA</a>
+          </li> -->
+          <!-- <div class="nav-cta">
+          <a class="btn primary joinBtn">Join NEXAA</a>
+        </div> -->
         </ul>
 
-        <!-- CTA -->
+        <!-- Desktop CTA -->
         <div class="nav-cta">
-          <a id="joinBtn" class="btn primary join-btn joinBtn">Join NEXAA</a>
+          <a class="btn primary joinBtn">Join NEXAA</a>
         </div>
       </nav>
     </header>
 
     <section class="hero">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Official Technical Association – CSE (AI & ML)
+      </div>
+
       <div class="hero-container">
-        <h1>
-          NEXAA<br />
+        <h1 class="hero-title">
+          NEXAA
           <span>Next Gen Engineers & AI Association</span>
         </h1>
 
-        <h2 class="tagline">
+        <p class="hero-subtitle">
           Building AI Leaders. Driving Innovation. Engineering the Future.
-        </h2>
+        </p>
 
         <p class="hero-description">
-          NEXAA is the official technical association of the Department of
-          Computer Science & Engineering (Artificial Intelligence & Machine
-          Learning). It serves as the central body responsible for all technical
-          events, hackathons, workshops, competitions, and innovation-driven
-          initiatives.
+          NEXAA is the central technical body of the Department of Computer
+          Science & Engineering (AI & ML), responsible for all technical events,
+          hackathons, workshops, competitions, and innovation initiatives
+          conducted year-round.
         </p>
 
         <div class="hero-actions">
           <a href="#events" class="btn primary">Explore Events</a>
-          <a href="#team" class="btn outline">Meet the Team</a>
-          <a id="joinBtn2" class="btn primary joinBtn">Join NEXAA</a>
+          <a href="#team" class="btn ghost">Meet the Team</a>
+          <a class="btn primary joinBtn">Join NEXAA</a>
+        </div>
+      </div>
+
+      <!-- Floating Quote Cards -->
+      <div class="hero-quotes">
+        <div class="quote-card left">
+          <p>
+            “Student-driven technical communities like NEXAA are key to building
+            industry-ready engineers.”
+          </p>
+          <span>— Faculty Advisor</span>
+        </div>
+
+        <div class="quote-card right">
+          <p>
+            “NEXAA creates an ecosystem where innovation, leadership, and AI
+            skills grow together.”
+          </p>
+          <span>— Industry Mentor</span>
         </div>
       </div>
     </section>
