@@ -103,3 +103,23 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
+
+
+const flagshipCard = document.querySelector('.event-card.flagship');
+const video = document.getElementById('flagshipPreview');
+
+flagshipCard.addEventListener('mouseenter', () => {
+  video.style.display = 'block';
+  video.play();
+});
+
+flagshipCard.addEventListener('mousemove', (e) => {
+  video.style.left = `${e.clientX + 20}px`;
+  video.style.top = `${e.clientY - 140}px`;
+});
+
+flagshipCard.addEventListener('mouseleave', () => {
+  video.style.display = 'none';
+  video.pause();
+  video.currentTime = 0;
+});
