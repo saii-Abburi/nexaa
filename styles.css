@@ -1031,11 +1031,13 @@ body {
 }
 
 .people-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   perspective: 1200px; /* Needed for 3D effect */
 }
+
 
 .profile-card {
   position: relative;
@@ -1083,14 +1085,14 @@ body {
   transform-style: preserve-3d;
 }
 
-.card-layer.photo img {
+/* .card-layer.photo img {
   width: 100%;
   height: 260px;
   height: auto;
   display: block;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-}
+} */
 
 .card-layer.content {
   /* position: absolute; */
@@ -1167,13 +1169,18 @@ body {
   background: #111;
   border-radius: 15px;
   padding: 30px 20px;
-  text-align: center;
-  color: #fff;
+  /* text-align: center; */
+  /* color: #fff; */
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   transform-style: preserve-3d;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
+
+
 
 .impact-card:hover {
   box-shadow: 0 20px 40px rgba(255, 140, 0, 0.4);
@@ -1185,10 +1192,16 @@ body {
   margin-bottom: 15px;
   transition: transform 0.2s ease;
 }
+/* .impact-card h3{
+  color: white;
+} */
+.impact-card span{
+  color: #ff8c00;
+}
 
 .impact-card h3 {
   font-size: 24px;
-  color: #ff8c00;
+  color: white;
   margin-bottom: 10px;
 }
 
@@ -1198,10 +1211,68 @@ body {
 }
 
 .impact-icon {
-  font-size: 28px;
-  color: #ff8c00;
-  margin-bottom: 14px;
+  font-size: 24px;
+  border-radius: 18px;
+  padding: 12px;
+  font-weight: 800;
 }
+
+
+
+
+/* 1 – Events */
+.impact-card:nth-child(1) .impact-icon {
+  background: #ff8c00;
+  color: #000;
+}
+.impact-card:nth-child(1) {
+  box-shadow: 0 0 0 rgba(255,140,0,0);
+}
+.impact-card:nth-child(1):hover {
+  box-shadow: 0 20px 60px rgba(255,140,0,0.25);
+}
+
+/* 2 – Participants */
+.impact-card:nth-child(2) .impact-icon {
+  background: #00c2ff;
+}
+.impact-card:nth-child(2):hover {
+  box-shadow: 0 20px 60px rgba(0,194,255,0.25);
+}
+
+/* 3 – College Level */
+.impact-card:nth-child(3) .impact-icon {
+  background: #9b59b6;
+}
+.impact-card:nth-child(3):hover {
+  box-shadow: 0 20px 60px rgba(155,89,182,0.25);
+}
+
+/* 4 – National */
+.impact-card:nth-child(4) .impact-icon {
+  background: #2ecc71;
+}
+.impact-card:nth-child(4):hover {
+  box-shadow: 0 20px 60px rgba(46,204,113,0.25);
+}
+
+/* 5 – Achievements */
+.impact-card:nth-child(5) .impact-icon {
+  background: #f1c40f;
+  color: #000;
+}
+.impact-card:nth-child(5):hover {
+  box-shadow: 0 20px 60px rgba(241,196,15,0.25);
+}
+
+/* 6 – Industry */
+.impact-card:nth-child(6) .impact-icon {
+  background: #e84393;
+}
+.impact-card:nth-child(6):hover {
+  box-shadow: 0 20px 60px rgba(232,67,147,0.25);
+}
+
 
 /* ********* gallery Nexaa******* */
 
