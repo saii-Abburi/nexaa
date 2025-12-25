@@ -76,8 +76,14 @@ profileCards.forEach(card => {
     card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
 
     // Parallax layers
-    photoLayer.style.transform = `translateZ(30px)`; // photo moves forward
-    contentLayer.style.transform = `translateZ(60px)`; // text moves slightly more
+    if(photoLayer){
+
+      photoLayer.style.transform = `translateZ(30px)`; // photo moves forward
+    }
+    if(contentLayer){
+
+      contentLayer.style.transform = `translateZ(60px)`; // text moves slightly more
+    }
   });
 
   card.addEventListener('mouseleave', () => {
