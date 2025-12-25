@@ -1,14 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
-
-*{
-  font-family: 'Manrope','Manrope Fallback','Helvetica';
+* {
+  font-family: "Manrope", "Manrope Fallback", "Helvetica";
   scroll-behavior: smooth;
 }
-body{
+body {
   background: #0b0b0b;
 }
 
+
+.h2{
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff8c00;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 0;
+}
+
+
+.leafIcon {
+  display: inline-block; /* safer than block for icons */
+  width: 44px;
+  height: 80px;
+  background-image: url('./assets/leaf.svg'); /* MUST include extension */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.leafIcon-right{
+  /* transform: rotate(-90deg); */
+  transform: scaleX(-1);
+}
 
 /* Header section */
 
@@ -163,7 +186,7 @@ body{
   .nav-links.active {
     max-height: 500px;
     background: rgba(11, 11, 11, 0.6);
-    
+
     /* width: max-content; */
   }
 
@@ -185,9 +208,6 @@ body{
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
-
-
-
 
 /* ************* Hero **************** */
 
@@ -223,6 +243,17 @@ body{
   height: 10px;
   background: #22c55e;
   border-radius: 50%;
+  animation: pulsering 1.5s infinite;
+}
+
+@keyframes pulsering{
+  0% {
+    box-shadow: 0 0 #22c55e66;
+  }
+
+  100% {
+    box-shadow: 0 0 0 15px #22c55e00;
+  }
 }
 
 /* Main container */
@@ -316,20 +347,15 @@ body{
   padding: 22px 24px;
   background: #111111;
   border-radius: 16px;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    0 0 35px rgba(255, 140, 0, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 35px rgba(255, 140, 0, 0.25);
   font-size: 14px;
   color: white;
 }
 
 .quote-card:hover {
-  box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.45),
-    0 0 50px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45), 0 0 50px rgba(255, 140, 0, 0.4);
   transform: rotate(-22deg) scale(1.03);
 }
-
 
 .quote-card span {
   display: block;
@@ -380,9 +406,6 @@ body{
   }
 }
 
-
-
-
 /* ************** About ********************* */
 
 .about-nexaa {
@@ -395,13 +418,13 @@ body{
   margin: 0 auto;
 }
 
-.about-header h2 {
+/* .about-header h2 {
   font-size: 36px;
   font-weight: 700;
   color: #ff8c00;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-}
+} */
 
 .divider {
   width: 80px;
@@ -429,95 +452,220 @@ body{
 }
 
 
+/* ********* Vision ************* */
+/* ===== VISION SECTION ===== */
 
-
-/* ********* Vision - Mission *************/
-
-
-.vision-mission {
-  background-color: #0b0b0b;
-  padding: 100px 24px;
+.nexaa-vision {
+  background: #0b0b0b;
+  color: #ffffff;
+  padding: 80px 40px;
+  position: relative;
+  /* overflow: hidden; */
+  min-height: 60vh;
 }
 
-.vm-container {
-  max-width: 1200px;
+.vision-wrapper {
+  /* max-width: 1200px; */
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  position: relative;
+  text-align: center;
 }
 
-.vm-box {
-  background-color: #111111;
-  /* border: 1px solid rgba(255, 140, 0, 0.2); */
-  padding: 40px;
-  border-radius: 10px;
-  transition: all 0.25s ease;
+/* ===== CENTER CONTENT ===== */
+
+.vision-content {
+  position: relative;
+  z-index: 5;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-.vm-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 16px rgba(255, 140, 0, 0.25);
+.vision-label {
+  display: inline-block;
+  color: #ff8c00;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.vm-header {
+.vision-heading {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
-.vm-icon {
-  color: #ff8c00;
-  font-size: 18px;
-}
-
-.vm-header h2 {
-  font-size: 28px;
+.vision-content h1 {
+  font-size: 36px;
   font-weight: 700;
-  color: #ff8c00;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  line-height: 1.2;
+  margin: 20px 0;
 }
 
-.vm-box p {
-  font-size: 16px;
+.vision-content p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 14px;
   line-height: 1.7;
-  color: #ededed;
+  color: #bdbdbd;
 }
 
-.vm-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/* ===== FLOATING CARDS ===== */
 
-.vm-box ul li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 14px;
-  font-size: 16px;
-  color: #ededed;
-  line-height: 1.6;
-}
-
-.vm-box ul li::before {
-  content: "›";
+.vision-floats {
   position: absolute;
-  left: 0;
-  color: #ffa500;
-  font-size: 18px;
-  font-weight: bold;
+  inset: 0;
+  pointer-events: none;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .vm-container {
-    grid-template-columns: 1fr;
+.vision-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 14px;
+  /* box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 25px rgba(255,140,0,0.25); */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.6),
+    0 0 40px rgba(255,140,0,0.45);
+}
+
+/* ===== CARD IMAGES ===== */
+
+.vision-card .vision-img {
+  width: 250px;
+  border-radius: 12px;
+  display: block;
+}
+
+.vision-img-span {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff8c00;
+  text-align: center;
+}
+
+/* ===== CARD POSITIONS ===== */
+
+.vision-card.left.one {
+  top: 5%;
+  left: 3%;
+  transform: rotate(6deg);
+}
+
+.vision-card.left.two {
+  top: 95%;
+  left: 7%;
+  transform: rotate(-6deg);
+}
+
+.vision-card.right.one {
+  top: 5%;
+  right: 3%;
+  transform: rotate(-6deg);
+}
+
+.vision-card.right.two {
+  top: 95%;
+  right: 7%;
+  transform: rotate(6deg);
+}
+
+
+@media (max-width:1200px) {
+  .vision-card{
+    display: none;
   }
 }
 
 
+
+/* ********** Missions ********** */
+.nexaa-mission {
+  background: #0b0b0b;
+  color: #fff;
+  padding: 60px 40px;
+}
+
+.mission-main-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+/* Each mission block */
+.mission-block {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.mission-block:nth-child(even) {
+  grid-template-columns: 1.2fr 1fr; /* alternate left/right layout */
+}
+
+.mission-visual {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mission-visual img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255,140,0,0.2);
+  transition: transform 0.35s ease;
+}
+
+.mission-visual img:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.mission-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ff8c00;
+}
+
+.mission-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #bdbdbd;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mission-block {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .mission-block:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-visual {
+    justify-content: center;
+  }
+}
 
 
 /* ********** Events Nexaa ************ */
@@ -532,13 +680,13 @@ body{
   margin: 0 auto;
 }
 
-.events-header h2 {
+/* .events-header h2 {
   font-size: 36px;
   font-weight: 700;
   color: #ff8c00;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-}
+} */
 
 .events-underline {
   width: 120px;
@@ -622,8 +770,6 @@ body{
   color: #ffa500;
 }
 
-
-
 /* ******* people Nexaa *********** */
 .people-nexaa {
   background-color: #0b0b0b;
@@ -635,12 +781,12 @@ body{
   margin: 0 auto;
 }
 
-.people-header h2 {
+/* .people-header h2 {
   font-size: 36px;
   font-weight: 700;
   color: #ff8c00;
   text-transform: uppercase;
-}
+} */
 
 .people-underline {
   width: 120px;
@@ -737,8 +883,6 @@ body{
   color: #9a9a9a;
 }
 
-
-
 .people-section {
   background: #0b0b0b;
   color: #fff;
@@ -768,11 +912,11 @@ body{
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .profile-card:hover {
-  box-shadow: 0 20px 40px rgba(255,140,0,0.4);
+  box-shadow: 0 20px 40px rgba(255, 140, 0, 0.4);
 }
 
 .card-layer {
@@ -818,7 +962,6 @@ body{
   color: #888;
 }
 
-
 /* *********** Impact NExaa ************* */
 
 .impact-nexaa {
@@ -831,13 +974,13 @@ body{
   margin: 0 auto;
 }
 
-.impact-header h2 {
+/* .impact-header h2 {
   font-size: 36px;
   font-weight: 700;
   color: #ff8c00;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-}
+} */
 
 .impact-underline {
   width: 120px;
@@ -869,7 +1012,7 @@ body{
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   transform-style: preserve-3d;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .impact-card:hover {
@@ -894,14 +1037,11 @@ body{
   font-size: 14px;
 }
 
-
 .impact-icon {
   font-size: 28px;
   color: #ff8c00;
   margin-bottom: 14px;
 }
-
-
 
 /* ********* gallery Nexaa******* */
 
@@ -915,13 +1055,13 @@ body{
   margin: 0 auto;
 }
 
-.gallery-header h2 {
+/* .gallery-header h2 {
   font-size: 36px;
   font-weight: 700;
   color: #ff8c00;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-}
+} */
 
 .gallery-underline {
   width: 100px;
@@ -1001,7 +1141,6 @@ body{
     height: 220px;
   }
 }
-
 
 /* ********** Announcements********* */
 
@@ -1247,7 +1386,6 @@ button:hover {
   }
 }
 
-
 /* ***** Footer******* */
 .nexaa-footer {
   background: #0b0b0b;
@@ -1335,8 +1473,6 @@ button:hover {
   margin-top: 5px;
 }
 
-
-
 /* Modal container */
 .modal {
   display: none;
@@ -1347,8 +1483,8 @@ button:hover {
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  background-color: rgba(0,0,0,0.85);
-  padding:20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 20px;
 }
 
 /* Modal content box */
@@ -1359,7 +1495,7 @@ button:hover {
   padding: 40px;
   border-radius: 12px;
   max-width: 700px;
-  border: 1px solid rgba(255,140,0,0.3);
+  border: 1px solid rgba(255, 140, 0, 0.3);
   position: relative;
   animation: fadeIn 0.3s ease;
 }
@@ -1380,16 +1516,19 @@ button:hover {
   color: #ffa500;
 }
 
-
-
-
-
 /* Fade animation */
 @keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Adjust form inside modal (reuse previous join form styles) */
-.join-form .form-row { gap: 20px; }
-
+.join-form .form-row {
+  gap: 20px;
+}
