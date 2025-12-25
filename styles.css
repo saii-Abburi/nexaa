@@ -33,6 +33,39 @@ body {
   transform: scaleX(-1);
 }
 
+
+.label{
+  display: inline-block;
+  color: #ff8c00;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.subheading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.subheading h1{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 20px 0;
+  text-align: center;
+  color: white;
+}
+
+.subtext{
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #bdbdbd;
+}
+
 /* Header section */
 
 /* ================= HEADER ================= */
@@ -417,6 +450,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+.about-header{
+  text-align: center;
+}
 
 /* .about-header h2 {
   font-size: 36px;
@@ -426,12 +462,12 @@ body {
   letter-spacing: 1.2px;
 } */
 
-.divider {
+/* .divider {
   width: 80px;
   height: 3px;
   background-color: #ff8c00;
   margin-top: 12px;
-}
+} */
 
 .about-content {
   margin-top: 40px;
@@ -480,36 +516,21 @@ body {
   margin: 0 auto;
 }
 
-.vision-label {
-  display: inline-block;
-  color: #ff8c00;
-  font-weight: 700;
-  letter-spacing: 3px;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
 
-.vision-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.vision-content h1 {
+/* .vision-content h1 {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
   margin: 20px 0;
-}
+} */
 
-.vision-content p {
+/* .vision-content p {
   max-width: 680px;
   margin: 0 auto;
   font-size: 14px;
   line-height: 1.7;
   color: #bdbdbd;
-}
+} */
 
 /* ===== FLOATING CARDS ===== */
 
@@ -599,11 +620,8 @@ body {
   padding: 60px 40px;
 }
 
-.mission-main-title {
+.mission-header{
   text-align: center;
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 60px;
 }
 
 /* Each mission block */
@@ -672,7 +690,7 @@ body {
 
 .events-nexaa {
   background-color: #0b0b0b;
-  padding: 100px 24px;
+  /* padding: 100px 24px; */
 }
 
 .events-container {
@@ -680,6 +698,9 @@ body {
   margin: 0 auto;
 }
 
+.events-header{
+  text-align: center;
+}
 /* .events-header h2 {
   font-size: 36px;
   font-weight: 700;
@@ -688,19 +709,19 @@ body {
   letter-spacing: 1.2px;
 } */
 
-.events-underline {
+/* .events-underline {
   width: 120px;
   height: 3px;
   background-color: #ff8c00;
   margin-top: 10px;
-}
+} */
 
-.events-subtext {
+/* .events-subtext {
   margin-top: 16px;
   max-width: 720px;
   color: #9a9a9a;
   font-size: 15px;
-}
+} */
 
 .event-category {
   margin-top: 60px;
@@ -781,6 +802,10 @@ body {
   margin: 0 auto;
 }
 
+.people-header{
+  text-align: center;
+}
+
 /* .people-header h2 {
   font-size: 36px;
   font-weight: 700;
@@ -788,18 +813,18 @@ body {
   text-transform: uppercase;
 } */
 
-.people-underline {
+/* .people-underline {
   width: 120px;
   height: 3px;
   background-color: #ff8c00;
   margin-top: 10px;
-}
+} */
 
-.people-header p {
+/* .people-header p {
   margin-top: 16px;
   max-width: 720px;
   color: #9a9a9a;
-}
+} */
 
 /* .people-section {
   margin-top: 70px;
@@ -974,6 +999,10 @@ body {
   margin: 0 auto;
 }
 
+.impact-header{
+  text-align: center;
+}
+
 /* .impact-header h2 {
   font-size: 36px;
   font-weight: 700;
@@ -982,7 +1011,7 @@ body {
   letter-spacing: 1.2px;
 } */
 
-.impact-underline {
+/* .impact-underline {
   width: 120px;
   height: 3px;
   background-color: #ff8c00;
@@ -994,7 +1023,7 @@ body {
   max-width: 720px;
   color: #9a9a9a;
   font-size: 15px;
-}
+} */
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1054,6 +1083,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+.gallery-header{
+  text-align: center;
+}
 
 /* .gallery-header h2 {
   font-size: 36px;
@@ -1062,20 +1094,20 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.2px;
 } */
-
+/* 
 .gallery-underline {
   width: 100px;
   height: 3px;
   background-color: #ff8c00;
   margin-top: 10px;
-}
+} */
 
-.gallery-header p {
+/* .gallery-header p {
   margin-top: 16px;
   max-width: 720px;
   color: #9a9a9a;
   font-size: 15px;
-}
+} */
 
 .gallery-grid {
   margin-top: 60px;
