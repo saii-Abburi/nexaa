@@ -132,3 +132,66 @@ buttons.forEach((btn) => {
     }, 300);
   });
 });
+
+
+// const hero = document.getElementsByClassName('nexaa-vision')[0];
+
+// function meteor(){
+//   let e = document.createElement('img');
+//   e.src='./assets/Meteor.png';
+//   e.setAttribute('class' ,'meteor');
+//   hero.appendChild(e);
+//   e.style.left = Math.random()* + innerWidth+'PX';
+
+//   setTimeout(function(){
+//     hero.removeChild(e); 
+//   },1500)
+// }
+
+// setInterval(function(){
+//   meteor()
+// }
+// ,100)
+
+const cursor = document.querySelector('.custom-cursor');
+let mouseX = 0, mouseY = 0;
+let currentX = 0, currentY = 0;
+let hue = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  emitParticle(e.clientX, e.clientY);
+});
+
+function emitParticle(x, y) {
+  const p = document.createElement('div');
+  p.className = 'cursor-particle';
+
+  hue = (hue + 6) % 360;
+  p.style.setProperty('--hue', `${hue}deg`);
+
+  p.style.left = `${x}px`;
+  p.style.top = `${y}px`;
+
+  document.body.appendChild(p);
+
+  setTimeout(() => p.remove(), 600);
+}
+
+function animate() {
+  currentX += (mouseX - currentX) * 0.2;
+  currentY += (mouseY - currentY) * 0.2;
+
+  cursor.style.transform =
+    `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+
+

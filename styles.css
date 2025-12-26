@@ -8,14 +8,75 @@ body {
   background: #0b0b0b;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-
+  /* -webkit-overflow-scrolling: touch; */
+  cursor: none;
 }
 
 :root {
   --subtext-color: #9a9a9a;
   --subpara-color: #ededed;
 }
+
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  /* Center dot */
+  background: rgb(0, 255, 255);
+
+  /* Glow */
+  box-shadow:
+    0 0 6px rgba(0, 255, 255, 0.9),
+    0 0 16px rgba(0, 255, 255, 0.6),
+    0 0 32px rgba(0, 255, 255, 0.35);
+
+  filter: hue-rotate(0deg);
+  animation: hueShift 4s linear infinite;
+}
+
+
+.cursor-particle {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+
+  background: rgba(0,255,255,0.8);
+  box-shadow:
+    0 0 12px rgba(0,255,255,0.8),
+    0 0 24px rgba(0,255,255,0.4);
+
+  animation: fadeOut 0.6s linear forwards;
+  filter: hue-rotate(var(--hue));
+}
+
+
+
+
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Smooth color cycling */
+@keyframes hueShift {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
 
 .h2 {
   font-size: 36px;
@@ -286,6 +347,39 @@ body {
   padding: 80px 20px;
   overflow: hidden;
 }
+
+/* .meteor{
+  position: absolute;
+  top: 0;
+  color: #ff8c00;
+  font-size: 24px;
+  animation: meteorFall 5s linear infinite;
+}
+.meteor::before{
+  content: '\f753';
+  font-family: fontAwesome;
+  text-shadow:
+    0 4px 6px rgba(255, 140, 0, 0.6),
+    0 10px 12px rgba(255, 140, 0, 0.4),
+    0 18px 24px rgba(255, 140, 0, 0.25),
+    0 28px 40px rgba(255, 140, 0, 0.15);
+}
+
+@keyframes meteorFall {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(110vw, 110vh);
+    opacity: 0;
+  }
+} */
 
 /* Top badge */
 .hero-badge {
