@@ -134,7 +134,7 @@ buttons.forEach((btn) => {
 });
 
 
-// const hero = document.getElementsByClassName('nexaa-vision')[0];
+// const hero = document.body;
 
 // function meteor(){
 //   let e = document.createElement('img');
@@ -173,7 +173,9 @@ function emitParticle(x, y) {
   p.style.setProperty('--hue', `${hue}deg`);
 
   p.style.left = `${x}px`;
-  p.style.top = `${y}px`;
+p.style.top = `${y}px`;
+p.style.transform = 'translate(-50%, -50%)';
+
 
   document.body.appendChild(p);
 
@@ -181,11 +183,11 @@ function emitParticle(x, y) {
 }
 
 function animate() {
-  currentX += (mouseX - currentX) * 0.2;
-  currentY += (mouseY - currentY) * 0.2;
+  currentX += (mouseX - currentX) ;
+  currentY += (mouseY - currentY) ;
 
   cursor.style.transform =
-    `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+    `translate(${currentX}px, ${currentY}px) translate(-45%, -4%)`;
 
   requestAnimationFrame(animate);
 }

@@ -10,7 +10,6 @@ body {
   scroll-behavior: smooth;
   /* -webkit-overflow-scrolling: touch; */
   cursor: none;
-
 }
 
 :root {
@@ -18,14 +17,20 @@ body {
   --subpara-color: #ededed;
 }
 
+button, a {
+cursor: url('./assets/cursor.png') 0 0, pointer;
+
+}
+
+
 
 /* Custom cursor */
 .custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  /* width: 40px;
-  height: 40px; */
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
