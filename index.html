@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexaa - Next Gen Engineers & AI Association</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link
-      rel="preload"
-      href="./fonts/HelveticaNowText-Regular.woff2"
-      as="font"
-    />
+    <link rel="icon" href="./assets/Nexaa.png" />
   </head>
   <body>
     <div class="custom-cursor"></div>
@@ -52,7 +48,7 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="hero-badge">
         <span class="dot"></span>
         Official Technical Association – CSE (AI & ML)
@@ -242,19 +238,31 @@
         <div class="mission-points">
           <button data-img="./assets/AI_Innovation.png" class="active">
             Impactful Technical Events
-            <p>Organize industry-relevant hackathons, competitions, and technical fests that challenge students beyond textbooks.</p>
+            <p>
+              Organize industry-relevant hackathons, competitions, and technical
+              fests that challenge students beyond textbooks.
+            </p>
           </button>
           <button data-img="./assets/Hackathons.png">
             Hands-on Learning
-            <p>Encourage real-world problem solving through workshops, project-based learning, and collaborative innovation.</p>
+            <p>
+              Encourage real-world problem solving through workshops,
+              project-based learning, and collaborative innovation.
+            </p>
           </button>
           <button data-img="./assets/Futuretech.png">
             Future-Focused Technologies
-            <p>Promote AI, ML, data science, and emerging technologies aligned with industry and research trends.</p>
+            <p>
+              Promote AI, ML, data science, and emerging technologies aligned
+              with industry and research trends.
+            </p>
           </button>
           <button data-img="./assets/Community.png">
             Leadership & Community
-            <p>Build leadership, teamwork, and technical confidence by empowering students to lead initiatives under NEXAA.</p>
+            <p>
+              Build leadership, teamwork, and technical confidence by empowering
+              students to lead initiatives under NEXAA.
+            </p>
           </button>
         </div>
       </div>
@@ -954,5 +962,24 @@
       src="https://kit.fontawesome.com/e50a70e381.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.globe.min.js"></script>
+    <!-- <script src="three.r134.min.js"></script>
+    <script src="vanta.globe.min.js"></script> -->
+    <script >
+      VANTA.GLOBE({
+        el: "#hero",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xac8d65,
+        backgroundColor: 0x0
+      })
+    </script>
   </body>
 </html>
