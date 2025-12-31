@@ -17,10 +17,10 @@ body {
   --subpara-color: #ededed;
 }
 
-button, a {
+/* button, a {
 cursor: url('./assets/cursor.png') 0 0, pointer;
 
-}
+} */
 
 
 
@@ -49,22 +49,22 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
 }
 
 
-.cursor-particle {
+/* .cursor-particle {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
 
-  background: rgba(0,255,255,0.8);
+  background: rgba(0,255,255,0.4);
   box-shadow:
-    0 0 12px rgba(0,255,255,0.8),
+    0 0 12px rgba(0,255,255,0.4),
     0 0 24px rgba(0,255,255,0.4);
 
   animation: fadeOut 0.6s linear forwards;
   filter: hue-rotate(var(--hue));
-}
+} */
 
 
 
@@ -818,6 +818,7 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
 @media (max-width:480px) {
   .nexaa-vision{
     padding: 80px 20px;
+    min-height: 40vh;
   }
 }
 
@@ -908,6 +909,91 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
   }
 }
 
+/* ********** clubs Nexaa *************** */
+
+
+.clubs-nexaa{
+  max-width: 1200px;
+  margin: 0 auto ;
+  margin-bottom: 48px;
+}
+
+.clubs-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.club-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 18px;
+  padding: 32px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5),
+              0 0 30px rgba(255,140,0,0.25);
+}
+
+.club-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  background: rgba(255,140,0,0.12);
+  color: #ff8c00;
+}
+
+.club-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.club-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--subtext-color);
+  margin-bottom: 20px;
+}
+
+.club-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.club-points li {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.club-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff8c00;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .clubs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 
 
@@ -918,6 +1004,7 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
 
 .events-nexaa {
   background-color: #0b0b0b;
+  padding-top: 48px;
   /* padding: 100px 24px; */
 }
 
@@ -999,7 +1086,7 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
   padding: 4px 10px;
   font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #0b0b0b;
   background-color: #ff8c00;
   border-radius: 30px;
@@ -1139,27 +1226,27 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
   margin-top: 4px;
 }
 
-.coordinator-group {
+/* .coordinator-group {
   margin-bottom: 24px;
-}
-
+} */
+/* 
 .coordinator-group h4 {
   font-size: 18px;
   color: #ff8c00;
   margin-bottom: 6px;
-}
+} */
 
-.coordinator-group p {
+/* .coordinator-group p {
   font-size: 14px;
   color: #ededed;
-}
+} */
 
-.volunteer-text {
+/* .volunteer-text {
   max-width: 700px;
   font-size: 15px;
   line-height: 1.6;
   color: #9a9a9a;
-}
+} */
 
 .people-section {
   background: #0b0b0b;
@@ -1170,6 +1257,9 @@ cursor: url('./assets/cursor.png') 0 0, pointer;
 .people-section h3 {
   font-size: 24px;
   color: #ededed;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 40px;
 }
 
@@ -1844,9 +1934,10 @@ button:hover {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 50%;
+  inset: 0;
+  /* left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   /* width: 100%; */
   height: 100%;
   overflow-y: auto;
@@ -1862,7 +1953,8 @@ button:hover {
   color: #ff7a00;
   padding:12px 40px;
   border-radius: 12px;
-  max-width: 700px;
+  max-width: 400px;
+  max-height: calc(100vh - 10vh);
   border: 1px solid rgba(255, 140, 0, 0.3);
   position: relative;
   animation: fadeIn 0.3s ease;
@@ -1874,7 +1966,7 @@ button:hover {
   top: 18px;
   right: 20px;
   color: #ff8c00;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -1882,6 +1974,14 @@ button:hover {
 
 .modal .close:hover {
   color: #ffa500;
+}
+
+.modal .submit-btn{
+  background: #ff8c00;
+  border-radius: 30px;
+  border: 0;
+  outline: 0;
+  padding: 6px 12px;
 }
 
 /* Fade animation */

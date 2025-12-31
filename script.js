@@ -65,8 +65,8 @@ profileCards.forEach((card) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * 8; // smaller tilt
-    const rotateY = ((x - centerX) / centerX) * 8;
+    const rotateX = ((y - centerY) / centerY) * 12; // smaller tilt
+    const rotateY = ((x - centerX) / centerX) * 12;
 
     card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
 
