@@ -1,5 +1,21 @@
 // const joinBtn = document.getElementById("joinBtn");
 
+
+// Initialize Lenis
+const lenis = new Lenis({
+  duration:2.6,
+  velocity:.4
+});
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
 const modal = document.getElementById("joinModal");
 const closeBtn = modal.querySelector(".close");
 
